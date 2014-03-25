@@ -44,39 +44,39 @@ void *memmove(void *_dst, const void *_src, int c)
 		return _dst;
 
 	if (_dst <= _src)
-   {
-      // copy forwards
-      while (c--)
-         *dst++ = *src++;
-   }
-   else
-   {
-      // copy backwards
-      src += c;
-      dst += c;
+	{
+		// copy forwards
+		while (c--)
+			*dst++ = *src++;
+	}
+	else
+	{
+		// copy backwards
+		src += c;
+		dst += c;
 
-      while (c--)
-         *--dst = *--src;
-   }
+		while (c--)
+			*--dst = *--src;
+	}
 
 	return _dst;
 }
 
 int memcmp(const void *s1, const void *s2, size_t n)
 {
-     const unsigned char *us1 = (const unsigned char *) s1;
-     const unsigned char *us2 = (const unsigned char *) s2;
-     while (n-- != 0) {
-         if (*us1 != *us2)
+	const unsigned char *us1 = (const unsigned char *) s1;
+	const unsigned char *us2 = (const unsigned char *) s2;
+	while (n-- != 0) {
+		if (*us1 != *us2)
 #ifdef TINY
-             return 1;
+			return 1;
 #else
-             return (*us1 < *us2) ? -1 : +1;
+			return (*us1 < *us2) ? -1 : +1;
 #endif
-         us1++;
-         us2++;
-     }
-     return 0;
+		us1++;
+		us2++;
+	}
+	return 0;
 }
 
 

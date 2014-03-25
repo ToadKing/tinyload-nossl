@@ -291,24 +291,24 @@ void prog10(void) {
 
 static int nossl(void *addr, int len)
 {
-   char *cur = (char *)addr;
-   const char *end = cur + len - 8;
-   int count = 0;
+	char *cur = (char *)addr;
+	const char *end = cur + len - 8;
+	int count = 0;
 
-   do
-   {
-      if (cur[0] == 'h' && cur[1] == 't' && cur[2] == 't' && cur[3] == 'p' && cur[4] == 's' && cur[5] == ':' && cur[6] == '/' && cur[7] == '/' &&cur[8] != 0)
-      {
-         int len = strlen(cur);
-         memmove(cur + 4, cur + 5, len - 5);
-         cur[len - 1] = 0;
-         sync_after_write(cur, len);
-         cur += len;
-         count++;
-      }
-   } while (++cur < end);
+	do
+	{
+		if (cur[0] == 'h' && cur[1] == 't' && cur[2] == 't' && cur[3] == 'p' && cur[4] == 's' && cur[5] == ':' && cur[6] == '/' && cur[7] == '/' &&cur[8] != 0)
+		{
+			int len = strlen(cur);
+			memmove(cur + 4, cur + 5, len - 5);
+			cur[len - 1] = 0;
+			sync_after_write(cur, len);
+			cur += len;
+			count++;
+		}
+	} while (++cur < end);
 
-   return count;
+	return count;
 }
 
 void _main (void)
@@ -504,9 +504,9 @@ void _main (void)
 		if(di_read(dst, size, offset) != 1) {
 			debug_string("Warning: failed to read apploader request\n");
 		}
-      if (dst >= (void*)0x80000000 && dst < (void*)0x80F00000) {
-         nossl(dst, size);
-      }
+		if (dst >= (void*)0x80000000 && dst < (void*)0x80F00000) {
+			nossl(dst, size);
+		}
 		prog10();
 
 	}
