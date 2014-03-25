@@ -1,0 +1,7 @@
+*~
+*.o
+*.elf
+*.map
+*.dol
+.deps
+*.tar.*

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app version="1">
+  <name>TinyLoad</name>
+  <coder>marcan</coder>
+  <version>0.2</version>
+  <release_date>200912200000></release_date>
+  <short_description>Region-free loader</short_description>
+  <long_description>Region-free original game launcher in 4096 bytes
+
+Controls: None. Just wait for the game to load.
+
+User interface: There is a progress bar across the screen. If a detectable error occurs, a portion of the top of the screen will turn red. TinyLoad will then attempt to relaunch HBC.
+
+Supported features:
+- Region free
+- Proper PPC time setting
+- Should autodetect video mode
+- Launches proper IOS
+- Progress bar
+
+  </long_description>
+</app>
+
